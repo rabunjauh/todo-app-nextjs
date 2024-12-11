@@ -47,7 +47,7 @@ export default function Home() {
                 </div>
                 <div>
                   <CardHeader>
-                    <CardTitle>Attend Andini's Birthday Party</CardTitle>
+                    <CardTitle>Attend Andinis Birthday Party</CardTitle>
                     <CardDescription></CardDescription>
                   </CardHeader>
                   <CardContent className="flex gap-10">
@@ -84,7 +84,7 @@ export default function Home() {
                 </div>
                 <div>
                   <CardHeader>
-                    <CardTitle>Attend Andini's Birthday Party</CardTitle>
+                    <CardTitle>Attend Andinis Birthday Party</CardTitle>
                     <CardDescription></CardDescription>
                   </CardHeader>
                   <CardContent className="flex gap-10">
@@ -122,7 +122,7 @@ export default function Home() {
                 </div>
                 <div>
                   <CardHeader>
-                    <CardTitle>Attend Andini's Birthday Party</CardTitle>
+                    <CardTitle>Attend Andinis Birthday Party</CardTitle>
                     <CardDescription></CardDescription>
                   </CardHeader>
                   <CardContent className="flex gap-10">
@@ -219,7 +219,7 @@ export default function Home() {
                 </div>
                 <div>
                   <CardHeader>
-                    <CardTitle>Attend Andini's Birthday Party</CardTitle>
+                    <CardTitle>Attend Andinis Birthday Party</CardTitle>
                     <CardDescription></CardDescription>
                   </CardHeader>
                   <CardContent className="flex gap-10">
