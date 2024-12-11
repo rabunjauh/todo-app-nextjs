@@ -27,17 +27,16 @@ export default function VitalTask() {
           </div>
           <div>
             <CardHeader>
-              <CardTitle>Submit Documents</CardTitle>
+              <CardTitle>Walk the dog</CardTitle>
               <CardDescription></CardDescription>
             </CardHeader>
             <CardContent className="flex gap-10">
               <div className="w-[70%]">
-                Review the list of documents required for submission and ensure
-                all necessary documents are ready.
+                Take the dog to the park and bring treats as well...
               </div>
               <Image
-                src="/image/document.jpg"
-                alt="Document"
+                src="/image/dog.jpg"
+                alt="Dog"
                 width={100}
                 height={100}
                 className="rounded-xl"
@@ -65,16 +64,16 @@ export default function VitalTask() {
           </div>
           <div>
             <CardHeader>
-              <CardTitle>Complete assignments</CardTitle>
+              <CardTitle>Take grandma to hospital</CardTitle>
               <CardDescription></CardDescription>
             </CardHeader>
             <CardContent className="flex gap-10">
               <div className="w-[70%]">
-                The assignments must be completed to pass final year...
+                Go back home and take grandma to the hosp...
               </div>
               <Image
-                src="/image/document.jpg"
-                alt="Document"
+                src="/image/hospital.jpg"
+                alt="hospital"
                 width={100}
                 height={100}
                 className="rounded-xl"
@@ -100,14 +99,14 @@ export default function VitalTask() {
       <section className="border p-10 rounded-xl shadow-lg w-[60%]">
         <div className="flex gap-10">
           <Image
-            src="/image/document.jpg"
-            alt="Document"
+            src="/image/dog.jpg"
+            alt="Dog"
             width={200}
             height={200}
             className="rounded-xl"
           />
           <div className="flex flex-col gap-5 justify-end">
-            <h1 className="font-bold text-xl">Submit Documents</h1>
+            <h1 className="font-bold text-xl">Walk the dog</h1>
             <div className="font-light text-sm">
               Priority: <span className="text-red-500">Extreme</span>
             </div>
@@ -118,42 +117,22 @@ export default function VitalTask() {
           </div>
         </div>
         <div className="text-gray-500 leading-10">
+          <p>Take the dog to the park and bring treats as well.</p>
           <p>
-            <span className="font-semibold">Task Title: </span>Document
-            Submission.
+            Take Luffy and Jiro for leisurely stroll around the neighbourhood.
+            Enjoy the fresh air and give them the exercise and mental
+            stimulation they need for a happy and healthy day. Dont forget to
+            bring along squeky and fluffy for some extra fun along the way!
           </p>
           <p>
-            <span className="font-semibold">Objective: </span>To submit required
-            documents for something important
-          </p>
-          <p>
-            <span className="font-semibold">Task Description: </span>
-            Review the list of documents required for submission and ensure all
-            necessary documents are ready. Organize the documents accordingly
-            and scan them if physical copies need to be submitted digitally.
-            Rename the scanned files appropriately for easy identification and
-            veify the accepted file formats. Upload the documents securely to
-            the designated platform, double-check for accuracy, and obtain
-            confirmation of successful submission. Follow up if necessary to
-            ensure proper processing.
-          </p>
-          <p>
-            <span className="font-semibold">Additional Notes: </span>
-            <ul className="list-disc list-inside">
-              <li>Ensure that documents are authentic and up-to-date.</li>
-              <li>
-                Maintain confidentiality and security of sensitive information
-                during the submission process.
-              </li>
-              <li>
-                If there are specific guidelines or deadlines for submission,
-                adhere to them diligently
-              </li>
+            <ul className="list-decimal list-inside">
+              <li>Listen to podcast or audiobook</li>
+              <li>Practice mindfulness or meditaion</li>
+              <li>Take photos of interesting sights along the way</li>
+              <li>Practice obedience training with your dog</li>
+              <li>Chat with neighbors or other dog walkers</li>
+              <li>Listen to music or an upbeat playlist</li>
             </ul>
-          </p>
-          <p>
-            <span className="font-semibold">Deadline for Submission: </span>
-            End of Day
           </p>
         </div>
       </section>
