@@ -29,41 +29,52 @@ export default function Sidebar() {
             mustafa.visionet@gmail.com
           </div>
           <div className="space-y-3 mt-5 ">
-            <Button
-              variant={"ghost"}
-              className="w-full justify-start rounded-xl hover:text-red-400 font-normal text-xl h-20"
-            >
-              <MdDashboard />
-              <Link href="/">Dashboard</Link>
-            </Button>
-            <Button
-              variant={"ghost"}
-              className="w-full justify-start rounded-xl hover:text-red-400 font-normal text-xl h-20"
-            >
-              <BsExclamationCircle />
-              <Link href="/vital-task">Vital Task</Link>
-            </Button>
-            <Button
-              variant={"ghost"}
-              className="w-full justify-start rounded-xl hover:text-red-400 font-normal text-xl h-20"
-            >
-              <BiTask />
-              <Link href="/my-task">My Task</Link>
-            </Button>
-            <Button
-              variant={"ghost"}
-              className="w-full justify-start rounded-xl hover:text-red-400 font-normal text-xl h-20"
-            >
-              <IoIosList />
-              <Link href="/task-categories">Task Categories</Link>
-            </Button>
-            <Button
-              variant={"ghost"}
-              className="w-full justify-start rounded-xl hover:text-red-400 font-normal text-xl h-20"
-            >
-              <IoSettingsOutline />
-              <Link href="/settings">Settings</Link>
-            </Button>
+            <Link href="/">
+              <Button
+                variant={"ghost"}
+                className="w-full justify-start rounded-xl hover:text-red-400 font-normal text-xl h-20"
+              >
+                <MdDashboard />
+                Dashboard
+              </Button>
+            </Link>
+            <Link href="/vital-task">
+              <Button
+                variant={"ghost"}
+                className="w-full justify-start rounded-xl hover:text-red-400 font-normal text-xl h-20"
+              >
+                <BsExclamationCircle />
+                Vital Task
+              </Button>
+            </Link>
+            <Link href="/my-task">
+              {" "}
+              <Button
+                variant={"ghost"}
+                className="w-full justify-start rounded-xl hover:text-red-400 font-normal text-xl h-20"
+              >
+                <BiTask />
+                My Task
+              </Button>
+            </Link>
+            <Link href="/task-categories">
+              <Button
+                variant={"ghost"}
+                className="w-full justify-start rounded-xl hover:text-red-400 font-normal text-xl h-20"
+              >
+                <IoIosList />
+                Task Categories
+              </Button>
+            </Link>
+            <Link href="/settings">
+              <Button
+                variant={"ghost"}
+                className="w-full justify-start rounded-xl hover:text-red-400 font-normal text-xl h-20"
+              >
+                <IoSettingsOutline />
+                Settings
+              </Button>
+            </Link>
             <Button
               variant={"ghost"}
               className="w-full justify-start rounded-xl hover:text-red-400 font-normal text-xl h-20"

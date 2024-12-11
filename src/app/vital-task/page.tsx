@@ -11,13 +11,13 @@ import Image from "next/image";
 import { PiDotsThreeOutlineLight } from "react-icons/pi";
 import { RiCheckboxBlankCircleLine } from "react-icons/ri";
 
-export default function MyTask() {
+export default function VitalTask() {
   return (
     <main className="flex gap-5 h-[900px]">
       <section className="border p-10 rounded-xl shadow-lg w-[40%]">
         <h3 className="font-bold">
           <span className="underline underline-offset-4 decoration-red-400 decoration-2">
-            My
+            Vital
           </span>{" "}
           Tasks
         </h3>
