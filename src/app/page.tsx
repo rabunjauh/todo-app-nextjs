@@ -21,7 +21,9 @@ export default function Home() {
   return (
     <div>
       <main>
-        <h1 className="font-semibold text-3xl">Welcome back, Mustafa 👋 </h1>
+        <div className="px-10">
+          <h1 className="font-semibold text-3xl">Welcome back, Mustafa 👋 </h1>
+        </div>
         <div className="border rounded-lg mt-10 shadow-xl flex p-10 m-10 gap-3">
           <div className="w-1/2">
             <section className="shadow-xl rounded-lg p-8">

@@ -54,82 +54,103 @@ export default function MyTask() {
             <PiDotsThreeOutlineLight />
           </div>
         </Card>
-      </section>
-      <section className="border p-10 rounded-xl shadow-lg w-[60%]">
-        <Card className="w-full mb-3 mt-3">
+        <Card className="w-full mb-3 mt-3 flex">
+          <div className="mt-2 ml-2 text-blue-500 font-bold">
+            <RiCheckboxBlankCircleLine />
+          </div>
           <div>
             <CardHeader>
-              <CardTitle></CardTitle>
+              <CardTitle>Complete assignments</CardTitle>
               <CardDescription></CardDescription>
             </CardHeader>
-            <CardContent>
-              <div className="flex gap-10">
-                <Image
-                  src="/image/document.jpg"
-                  alt="Document"
-                  width={200}
-                  height={200}
-                  className="rounded-xl"
-                />
-                <div className="flex flex-col gap-5 justify-end">
-                  <h1 className="font-bold text-xl">Submit Documents</h1>
-                  <div className="font-light text-sm">
-                    Priority: <span className="text-red-500">Extreme</span>
-                  </div>
-                  <div className="font-light text-sm">
-                    Status: <span className="text-red-500">Not Started</span>
-                  </div>
-                  <div className="font-light text-xs">
-                    Created on: 20/05/2024
-                  </div>
-                </div>
+            <CardContent className="flex gap-10">
+              <div className="w-[70%]">
+                The assignments must be completed to pass final year...
               </div>
-              <div className="text-gray-500 leading-10">
-                <p>
-                  <span className="font-semibold">Task Title: </span>Document
-                  Submission.
-                </p>
-                <p>
-                  <span className="font-semibold">Objective: </span>To submit
-                  required documents for something important
-                </p>
-                <p>
-                  <span className="font-semibold">Task Description: </span>
-                  Review the list of documents required for submission and
-                  ensure all necessary documents are ready. Organize the
-                  documents accordingly and scan them if physical copies need to
-                  be submitted digitally. Rename the scanned files appropriately
-                  for easy identification and veify the accepted file formats.
-                  Upload the documents securely to the designated platform,
-                  double-check for accuracy, and obtain confirmation of
-                  successful submission. Follow up if necessary to ensure proper
-                  processing.
-                </p>
-                <p>
-                  <span className="font-semibold">Additional Notes: </span>
-                  <ul className="list-disc list-inside">
-                    <li>Ensure that documents are authentic and up-to-date.</li>
-                    <li>
-                      Maintain confidentiality and security of sensitive
-                      information during the submission process.
-                    </li>
-                    <li>
-                      If there are specific guidelines or deadlines for
-                      submission, adhere to them diligently
-                    </li>
-                  </ul>
-                </p>
-                <p>
-                  <span className="font-semibold">
-                    Deadline for Submission:{" "}
-                  </span>
-                  End of Day
-                </p>
-              </div>
+              <Image
+                src="/image/document.jpg"
+                alt="Document"
+                width={100}
+                height={100}
+                className="rounded-xl"
+              />
             </CardContent>
-            <CardFooter className="flex justify-between font-light text-xs"></CardFooter>
+            <CardFooter className="flex justify-between font-light text-xs">
+              <div>
+                Priority:<span className="text-blue-400"> Moderate</span>
+              </div>
+              <div>
+                Status:<span className="text-blue-500"> In Progress</span>
+              </div>
+              <div>
+                <span className="text-slate-500">Created on: 20/05/2024</span>
+              </div>
+            </CardFooter>
+          </div>
+          <div className="mt-2 mr-2 text-2xl">
+            <PiDotsThreeOutlineLight />
           </div>
         </Card>
+      </section>
+      <section className="border p-10 rounded-xl shadow-lg w-[60%]">
+        <div className="flex gap-10">
+          <Image
+            src="/image/document.jpg"
+            alt="Document"
+            width={200}
+            height={200}
+            className="rounded-xl"
+          />
+          <div className="flex flex-col gap-5 justify-end">
+            <h1 className="font-bold text-xl">Submit Documents</h1>
+            <div className="font-light text-sm">
+              Priority: <span className="text-red-500">Extreme</span>
+            </div>
+            <div className="font-light text-sm">
+              Status: <span className="text-red-500">Not Started</span>
+            </div>
+            <div className="font-light text-xs">Created on: 20/05/2024</div>
+          </div>
+        </div>
+        <div className="text-gray-500 leading-10">
+          <p>
+            <span className="font-semibold">Task Title: </span>Document
+            Submission.
+          </p>
+          <p>
+            <span className="font-semibold">Objective: </span>To submit required
+            documents for something important
+          </p>
+          <p>
+            <span className="font-semibold">Task Description: </span>
+            Review the list of documents required for submission and ensure all
+            necessary documents are ready. Organize the documents accordingly
+            and scan them if physical copies need to be submitted digitally.
+            Rename the scanned files appropriately for easy identification and
+            veify the accepted file formats. Upload the documents securely to
+            the designated platform, double-check for accuracy, and obtain
+            confirmation of successful submission. Follow up if necessary to
+            ensure proper processing.
+          </p>
+          <p>
+            <span className="font-semibold">Additional Notes: </span>
+            <ul className="list-disc list-inside">
+              <li>Ensure that documents are authentic and up-to-date.</li>
+              <li>
+                Maintain confidentiality and security of sensitive information
+                during the submission process.
+              </li>
+              <li>
+                If there are specific guidelines or deadlines for submission,
+                adhere to them diligently
+              </li>
+            </ul>
+          </p>
+          <p>
+            <span className="font-semibold">Deadline for Submission: </span>
+            End of Day
+          </p>
+        </div>
       </section>
     </main>
   );
