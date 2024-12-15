@@ -1,3 +1,4 @@
+"use client";
 import {
   Card,
   CardContent,
@@ -7,6 +8,26 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+
+import {
+  Form,
+  FormControl,
+  FormDescription,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form";
+
 import { LiaBusinessTimeSolid } from "react-icons/lia";
 import { IoIosAdd } from "react-icons/io";
 import { Separator } from "@/components/ui/separator";
@@ -14,10 +35,40 @@ import Image from "next/image";
 import { PiDotsThreeOutlineLight } from "react-icons/pi";
 import { RiCheckboxBlankCircleLine } from "react-icons/ri";
 import { FaTasks } from "react-icons/fa";
-import Link from "next/link";
 import { BiTask } from "react-icons/bi";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
+import { z } from "zod";
+import { taskFormSchema } from "@/lib/form-schema";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import { Textarea } from "@/components/ui/textarea";
+
+import { cn } from "@/lib/utils";
+import { Calendar } from "@/components/ui/calendar";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
+import { CalendarIcon } from "lucide-react";
+import { format } from "date-fns";
 
 export default function Home() {
+  const form = useForm<z.infer<typeof taskFormSchema>>({
+    resolver: zodResolver(taskFormSchema),
+    defaultValues: {
+      taskTitle: "",
+      taskDescription: "",
+    },
+  });
+
+  function onSubmit(values: z.infer<typeof taskFormSchema>) {
+    console.log(values);
+  }
+
   return (
     <div>
       <main>
@@ -33,13 +84,155 @@ export default function Home() {
                   <h3>To-Do</h3>
                 </div>
 
-                <Link
-                  href="#"
-                  className="bg-white text-red-400 font-light hover:bg-red-400 hover:text-white flex items-center text-base"
-                >
-                  <IoIosAdd />
-                  Add Task
-                </Link>
+                <Dialog>
+                  <DialogTrigger asChild>
+                    <Button className="bg-white text-red-500 hover:bg-red-500 hover:text-white">
+                      <IoIosAdd />
+                      Add Task
+                    </Button>
+                  </DialogTrigger>
+                  <DialogContent>
+                    <DialogHeader>
+                      <DialogTitle>Add New Task</DialogTitle>
+                      <DialogDescription></DialogDescription>
+                    </DialogHeader>
+                    <div className="border rounded-lg p-3">
+                      <Form {...form}>
+                        <form
+                          onSubmit={form.handleSubmit(onSubmit)}
+                          className="space-y-8"
+                        >
+                          <FormField
+                            control={form.control}
+                            name="taskTitle"
+                            render={({ field }) => (
+                              <FormItem>
+                                <FormLabel>Task Title</FormLabel>
+                                <FormControl>
+                                  <Input placeholder="Task Title" {...field} />
+                                </FormControl>
+                                <FormDescription></FormDescription>
+                                <FormMessage />
+                              </FormItem>
+                            )}
+                          />
+                          <FormField
+                            control={form.control}
+                            name="taskDate"
+                            render={({ field }) => (
+                              <FormItem className="flex flex-col">
+                                <FormLabel>Date</FormLabel>
+                                <Popover>
+                                  <PopoverTrigger asChild>
+                                    <FormControl>
+                                      <Button
+                                        variant={"outline"}
+                                        className={cn(
+                                          "w-[240px] pl-3 text-left font-normal",
+                                          !field.value &&
+                                            "text-muted-foreground"
+                                        )}
+                                      >
+                                        {field.value ? (
+                                          format(field.value, "PPP")
+                                        ) : (
+                                          <span>Pick a date</span>
+                                        )}
+                                        <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
+                                      </Button>
+                                    </FormControl>
+                                  </PopoverTrigger>
+                                  <PopoverContent
+                                    className="w-auto p-0"
+                                    align="start"
+                                  >
+                                    <Calendar
+                                      mode="single"
+                                      selected={field.value}
+                                      onSelect={field.onChange}
+                                      disabled={(date) =>
+                                        date > new Date() ||
+                                        date < new Date("1900-01-01")
+                                      }
+                                      initialFocus
+                                    />
+                                  </PopoverContent>
+                                </Popover>
+                                <FormDescription></FormDescription>
+                                <FormMessage />
+                              </FormItem>
+                            )}
+                          />
+                          <FormField
+                            control={form.control}
+                            name="priority"
+                            render={({ field }) => (
+                              <FormItem className="space-y-3">
+                                <FormLabel>Priority</FormLabel>
+                                <FormControl>
+                                  <RadioGroup
+                                    onValueChange={field.onChange}
+                                    defaultValue={field.value}
+                                    className="flex flex-col space-y-1"
+                                  >
+                                    <div className="flex gap-3">
+                                      <FormItem className="flex items-center space-x-3 space-y-0">
+                                        <FormControl>
+                                          <RadioGroupItem value="extreme" />
+                                        </FormControl>
+                                        <FormLabel className="font-normal">
+                                          Extreme
+                                        </FormLabel>
+                                      </FormItem>
+                                      <FormItem className="flex items-center space-x-3 space-y-0">
+                                        <FormControl>
+                                          <RadioGroupItem value="moderate" />
+                                        </FormControl>
+                                        <FormLabel className="font-normal">
+                                          Moderate
+                                        </FormLabel>
+                                      </FormItem>
+                                      <FormItem className="flex items-center space-x-3 space-y-0">
+                                        <FormControl>
+                                          <RadioGroupItem value="low" />
+                                        </FormControl>
+                                        <FormLabel className="font-normal">
+                                          Low
+                                        </FormLabel>
+                                      </FormItem>
+                                    </div>
+                                  </RadioGroup>
+                                </FormControl>
+                                <FormMessage />
+                              </FormItem>
+                            )}
+                          />
+                          <FormField
+                            control={form.control}
+                            name="taskDescription"
+                            render={({ field }) => (
+                              <FormItem>
+                                <FormLabel>Task Description</FormLabel>
+                                <FormControl>
+                                  <Textarea
+                                    placeholder="Task Description"
+                                    className="resize-none"
+                                    {...field}
+                                  />
+                                </FormControl>
+                                <FormDescription></FormDescription>
+                                <FormMessage />
+                              </FormItem>
+                            )}
+                          />
+
+                          <Button type="submit">Submit</Button>
+                        </form>
+                      </Form>
+                    </div>
+                    <DialogFooter></DialogFooter>
+                  </DialogContent>
+                </Dialog>
               </div>
               <Card className="w-full mb-3 mt-3 flex">
                 <div className="mt-2 ml-2 text-red-500">
