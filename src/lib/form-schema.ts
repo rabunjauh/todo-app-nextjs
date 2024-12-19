@@ -14,5 +14,14 @@ export const categoryFormSchema = z.object({
 
 export const signUpFormSchema = z.object({
   firstName: z.string({ required_error: "First Name is required" }),
-  lastName: z.string(),
+  lastName: z.string({ required_error: "Last Name is required" }),
+  userName: z.string({ required_error: "Username is required" }),
+  emailAddress: z.string().email({ message: "Invalid email address" }),
+  password: z.string({ required_error: "Password is required" }),
+  confirmPassword: z.string({ required_error: "Confirm password is required" }),
+});
+
+export const signInFormSchema = z.object({
+  username: z.string({ required_error: "Username is required" }),
+  password: z.string({ required_error: "Password is required" }),
 });
